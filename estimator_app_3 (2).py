@@ -61,7 +61,8 @@ def fetch_estimate_from_gpt(description):
         return None
 
 if st.button("Generate Estimate with AI") and job_description:
-    result = fetch_estimate_from_gpt(job_description)
+   for line in result.split("\n"):
+
     if result:
         st.text_area("AI-Generated Estimate", result, height=200)
 
